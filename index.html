@@ -2,15 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Nextech Niger - Conseil de la jeunesse</title>
+    <title>Bonne fête de la république du Niger</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./assets/style.css" rel="stylesheet" async="async">
     <link href="./assets/prism.css" rel="stylesheet" async="async">
     <script src="./assets/jquery-3.1.1.min.js"></script>
     <script src="./assets/prism.js"></script>
-  <script src="./assets/fabric_with_gestures.js"></script>
-    
-    <script src="./assets/main.js" async="async"></script>
+    <script src="./assets/fabric_with_gestures.js"></script>
 
 </head>
 
@@ -20,7 +18,9 @@
 
 
         <div id="header">
-           <p id="welcome-paragraph">Ce site est fièrement publié par Nextech en collaboration avec le Conseil de la Jeunesse de Tahoua pour promouvoir et soutenir la contribution active et dynamique de la jeunesse locale. Nous sommes déterminés à faciliter le partage d'informations, à inspirer l'engagement civique et à célébrer les initiatives visant à façonner un avenir meilleur pour la République du Niger. En unissant nos forces, nous aspirons à encourager la participation de tous, car chaque voix et action comptent dans la construction d'une communauté forte et prospère. Propulsé par la technologie et l'innovation, Nextech demeure votre partenaire engagé dans cette noble entreprise. J'y crois, je m'engage!</p>
+
+           <p id="welcome-paragraph">Bienvenue sur notre plateforme de génération d'images dédiée à la célébration de la République du Niger, marquant 65 ans d'indépendance.
+             Ce projet, initié par <a href="https://www.facebook.com/nextechniger">Nextech Niger</a>, est une initiative libre et accessible via notre page  <a href="https://www.gitHub.com/nextechniger">GitHub</a>. L'objectif principal de cette démarche est de promouvoir la visibilité et la fierté de notre cher pays, le Niger. En mettant à disposition un outil simple et créatif, nous encourageons chacun à exprimer son attachement à cette nation riche en histoire et en diversité. Nous célébrons ainsi ensemble cet anniversaire mémorable et invitons tous les citoyens à contribuer à cette célébration numérique de notre indépendance. Rejoignez-nous dans cette aventure collective et partagez votre amour pour le Niger à travers des créations uniques et significatives.</p>
         </div>
            <canvas id="preview_panel">
             </canvas>
@@ -40,6 +40,8 @@
             </div>
             
         </div>
+
+        <p id="generated-image-count"></p>
         <img src="assets/nextech.png" class="logo"/>
         <p>Nextech Niger</p>
 
@@ -48,4 +50,10 @@
 
 </body>
 
+<script>
+    function cb(response) {
+        document.getElementById('generated-image-count').innerText = response.value;
+    }
+    </script>
+<script src="./assets/main.js" async="async"></script>
 </html>
