@@ -130,16 +130,6 @@ window.freshCanvas = function(){
 }
 
 
-// Exemple d'utilisation dans ton code
-window.onload = async function() {
-  // Obtient le nombre de téléchargements et l'affiche
-
-
-  // Simule un téléchargement réussi et incrémente le compteur
-
-};
-
-
 
 $(document).ready(function(){
   freshCanvas();
