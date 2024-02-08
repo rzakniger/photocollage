@@ -15,13 +15,6 @@ var imgRatio = 1;
 var ocw = cw;
 var och = cw / 620 * 874;
 
-var generatedImageCount = 0;
-
-
-/** Convert canvas to png and download it to local
- * format       : image file format (png)
- * imgMultiplier: ratio to original overlay image dimension
- */
 
 
 window.download = function() {
@@ -131,7 +124,7 @@ window.freshCanvas = function(){
     var oImg = img.set({ left: 0, top: 0}).scale(imgMultiplier);
     canvas.setOverlayImage(oImg, function() {
       canvas.renderAll();
-      addTextToCanvas(); // Ajout du texte après la mise à jour du canevas
+     // Ajout du texte après la mise à jour du canevas
     });
   });
 }
