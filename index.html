@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Nextech Niger - Conseil de la jeunesse</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./assets/style.css" rel="stylesheet" async="async">
+    <link href="./assets/prism.css" rel="stylesheet" async="async">
+    <script src="./assets/jquery-3.1.1.min.js"></script>
+    <script src="./assets/prism.js"></script>
+    <script src="./assets/fabric_with_gestures.js"></script>
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="content">
+
+
+        <div id="header">
+           <p id="welcome-paragraph">Ce site est fièrement publié par Nextech en collaboration avec le Conseil de la Jeunesse de Tahoua pour promouvoir et soutenir la contribution active et dynamique de la jeunesse locale. Nous sommes déterminés à faciliter le partage d'informations, à inspirer l'engagement civique et à célébrer les initiatives visant à façonner un avenir meilleur pour la République du Niger. En unissant nos forces, nous aspirons à encourager la participation de tous, car chaque voix et action comptent dans la construction d'une communauté forte et prospère. Propulsé par la technologie et l'innovation, Nextech demeure votre partenaire engagé dans cette noble entreprise. J'y crois, je m'engage!</p>
+        </div>
+           <canvas id="preview_panel">
+            </canvas>
+            <div class="file-input-box">
+                <label for="file-input" class="orange-button">Charger une image</label>
+                <input id="file-input" class="file-input" type="file" name="file" onchange="onFileChange(this)">
+            </div>
+            <button id="download" disabled="">
+                Télécharger l'image
+            </button>
+
+
+            <h5 id="no-file"></h5>
+
+            <div id="designs" style="display:none;">
+                <img class="design active" src="assets/cover.png" data-design="0">
+            </div>
+            
+        </div>
+
+    
+        <img src="assets/nextech.png" class="logo"/>
+        <p>Nextech Niger</p>
+
+    </div>
+
+
+</body>
+
+<script>
+    function cb(response) {
+        document.getElementById('generated-image-count').innerText = response.value;
+    }
+    </script>
+<script src="./assets/main.js" async="async"></script>
+</html>
