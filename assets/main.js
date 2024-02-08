@@ -15,6 +15,13 @@ var imgRatio = 1;
 var ocw = cw;
 var och = cw / 620 * 874;
 
+var generatedImageCount = 0;
+
+
+/** Convert canvas to png and download it to local
+ * format       : image file format (png)
+ * imgMultiplier: ratio to original overlay image dimension
+ */
 
 
 window.download = function() {
@@ -55,6 +62,12 @@ window.updatePreview = function(url) {
     canvas.add(oImg);
 
 
+        // Incrémente le compteur d'images générées
+        generatedImageCount++;
+    
+        // Met à jour l'affichage du nombre d'images générées
+        updateGeneratedImageCount();
+
     // Ajoutez le texte au canevas
 
     canvas.setActiveObject(oImg);  // Sélectionne l'image d'overlay
@@ -64,6 +77,11 @@ window.updatePreview = function(url) {
 
 
 
+  function updateGeneratedImageCount() {
+    // Met à jour l'affichage du nombre d'images générées
+    var countElement = document.getElementById("generated-image-count");
+    countElement.textContent = "Nombre d'images générées : " + generatedImageCount;
+  }
   
   // When click download button, download canvas image
   document.getElementById("download").onclick = function(){
@@ -124,10 +142,42 @@ window.freshCanvas = function(){
     var oImg = img.set({ left: 0, top: 0}).scale(imgMultiplier);
     canvas.setOverlayImage(oImg, function() {
       canvas.renderAll();
-     // Ajout du texte après la mise à jour du canevas
+      addTextToCanvas(); // Ajout du texte après la mise à jour du canevas
     });
   });
 }
+
+// Fonction pour obtenir le nombre de téléchargements depuis l'API
+async function getDownloadCount() {
+  const response = await fetch('http://localhost:3000/api/downloadCount');
+  const data = await response.json();
+  return data.count;
+}
+
+// Fonction pour incrémenter le nombre de téléchargements via l'API
+async function incrementDownloadCount() {
+  await fetch('http://localhost:3000/api/incrementDownload', { method: 'POST' });
+}
+
+// Exemple d'utilisation dans ton code
+window.onload = async function() {
+  // Obtient le nombre de téléchargements et l'affiche
+
+
+  // Simule un téléchargement réussi et incrémente le compteur
+  await incrementDownloadCount();
+  console.log('Téléchargement réussi. Compteur incrémenté.');
+
+  // Obtient le nouveau nombre de téléchargements et l'affiche
+  const newCount = await getDownloadCount();
+  console.log(`Nouveau nombre de téléchargements : ${newCount}`);
+
+
+  
+  var countElement = document.getElementById("generated-image-count");
+  countElement.textContent = "Nombre d'images générées : " + newCount;
+
+};
 
 
 
