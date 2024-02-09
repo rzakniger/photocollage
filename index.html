@@ -52,22 +52,30 @@
 }
 
         
- @keyframes fadeInOut {
-    0% {
-        opacity: 0;
+/* Ajoutez ces styles dans votre balise <style> ou dans votre fichier de style CSS */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-right-color: transparent;
     }
     50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
+        border-right-color: #000;
     }
 }
 
 .navbar-brand {
     font-weight: bold;
     font-family: 'Nunito', sans-serif;
-    animation: fadeInOut 3s infinite; /* Réglez la durée selon vos besoins */
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.1em;
+    animation: typing 3s steps(30, end), blink-caret 0.5s step-end infinite;
 }
 
 
