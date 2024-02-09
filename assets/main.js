@@ -51,13 +51,13 @@ window.updatePreview = function(url) {
     }
 
     var oImg = img.set({
-      left: 80,
+      left: 30,
       top: 50,
       cornerColor: 'red',
       cornerSize: 25,
       transparentCorners: false,
       borderColor: 'red'
-    }).scale(resizeRatio / 2.5);
+    }).scale(resizeRatio / 2);
 
     canvas.add(oImg);
 
