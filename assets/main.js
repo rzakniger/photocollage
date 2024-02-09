@@ -76,6 +76,8 @@ window.updatePreview = function(url) {
 
 
 
+  
+
 
   function updateGeneratedImageCount() {
     // Met à jour l'affichage du nombre d'images générées
