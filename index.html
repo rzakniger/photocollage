@@ -6,52 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./assets/style.css" rel="stylesheet" async="async">
     <link href="./assets/prism.css" rel="stylesheet" async="async">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"> <!-- Ajout de Bootstrap -->
     <script src="./assets/jquery-3.1.1.min.js"></script>
     <script src="./assets/prism.js"></script>
     <script src="./assets/fabric_with_gestures.js"></script>
-
 </head>
 
 <body>
     <div id="wrapper">
+        <!-- Barre de menu -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Nextech Niger</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">À propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
         <div id="content">
-
-
-        <div id="header">
-           <p id="welcome-paragraph">Ce site est fièrement publié par Nextech en collaboration avec le Conseil de la Jeunesse de Tahoua pour promouvoir et soutenir la contribution active et dynamique de la jeunesse locale. Nous sommes déterminés à faciliter le partage d'informations, à inspirer l'engagement civique et à célébrer les initiatives visant à façonner un avenir meilleur pour la République du Niger. En unissant nos forces, nous aspirons à encourager la participation de tous, car chaque voix et action comptent dans la construction d'une communauté forte et prospère. Propulsé par la technologie et l'innovation, Nextech demeure votre partenaire engagé dans cette noble entreprise. J'y crois, je m'engage!</p>
-        </div>
-           <canvas id="preview_panel">
-            </canvas>
+            <div id="header">
+                <p id="welcome-paragraph">Ce site est fièrement publié par Nextech en collaboration avec le Conseil de la Jeunesse de Tahoua pour promouvoir et soutenir la contribution active et dynamique de la jeunesse locale. Nous sommes déterminés à faciliter le partage d'informations, à inspirer l'engagement civique et à célébrer les initiatives visant à façonner un avenir meilleur pour la République du Niger. En unissant nos forces, nous aspirons à encourager la participation de tous, car chaque voix et action comptent dans la construction d'une communauté forte et prospère. Propulsé par la technologie et l'innovation, Nextech demeure votre partenaire engagé dans cette noble entreprise. J'y crois, je m'engage!</p>
+            </div>
+            <canvas id="preview_panel"></canvas>
             <div class="file-input-box">
                 <label for="file-input" class="orange-button">Charger une image</label>
                 <input id="file-input" class="file-input" type="file" name="file" onchange="onFileChange(this)">
             </div>
-            <button id="download" disabled="">
-                Télécharger l'image
-            </button>
-
-
+            <button id="download" disabled="">Télécharger l'image</button>
             <h5 id="no-file"></h5>
-
             <div id="designs" style="display:none;">
                 <img class="design active" src="assets/cover.png" data-design="0">
             </div>
-            
         </div>
 
-    
-        <img src="assets/nextech.png" class="logo"/>
-        <p>Nextech Niger</p>
-
+        <!-- Pied de page -->
+        <footer class="bg-light text-center">
+            <img src="assets/nextech.png" class="logo"/>
+            <p>Nextech Niger</p>
+        </footer>
     </div>
 
-
-</body>
-
-<script>
-    function cb(response) {
-        document.getElementById('generated-image-count').innerText = response.value;
-    }
+    <script>
+        function cb(response) {
+            document.getElementById('generated-image-count').innerText = response.value;
+        }
     </script>
-<script src="./assets/main.js" async="async"></script>
-</html>
+    <script src="./assets/main.js" async="async"></script>
+
+    <!-- Ajout des scripts Bootstrap pour le bon fonctionnement de la barre de menu -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
