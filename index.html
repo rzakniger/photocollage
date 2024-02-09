@@ -76,14 +76,13 @@
     height: 100%;
     top: 0;
     left: 0;
-    z-index: -1; /* Place the Particle.js animation behind other elements */
+    z-index: 1; /* Place the Particle.js animation behind other elements */
 }
 
 #content {
     margin-bottom: 20px;
     position: relative; /* Ensure content stays above Particle.js */
     z-index: 1; /* Ensure content stays above Particle.js */
-    background: linear-gradient(to bottom right, #FFD700, #FFA500);
 }
 
 #header {
