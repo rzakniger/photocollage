@@ -119,36 +119,6 @@ html, body {
 .file-input {
   display: none;
 }
-h1 {
-  background-color: rgb(0, 135, 0);
-  color: white;
-  font-family: 'Helvetica Neue', sans-serif; /* Exemple de police moderne, tu peux la changer selon tes préférences */
-  text-align: center;
-  padding: 2vh 0;
-  margin: 0;
-}
-
-#welcome-paragraph {
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  font-size: 16px;
-  line-height: 1.5;
-  max-width: 80%;
-  text-align: center;
-  align-items: center;
-  color: #000000;
-}
-
-#welcome-paragraph a {
-  color: #007BFF;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-#welcome-paragraph a:hover {
-  text-decoration: underline;
-}
-
 
 .upper-canvas {
   -webkit-box-shadow: 1px 0px 38px 12px #363636;
