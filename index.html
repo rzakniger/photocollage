@@ -51,32 +51,33 @@
 
         #header {
             position: relative;
-            background: linear-gradient(to top, rgba(255, 165, 0, 0.8), rgba(0, 128, 0, 0.9)), url('./assets/imageback.jpg') no-repeat top center;
+            background: linear-gradient(to top, rgba(255, 165, 0, 0.8), rgba(255, 69, 0, 0.9)), url('./assets/imageback.jpg') no-repeat top center;
             background-size: cover;
             text-align: center;
             padding: 50px;
-            color: white; /* Couleur du texte en blanc pour le contraste */
+            color: white;
             z-index: 0;
         }
 
         #welcome-paragraph {
-            color: white; /* Couleur du texte en blanc pour le contraste */
-            margin-top: 20px; /* Ajoute une marge en haut du paragraphe */
-            font-weight: bold; /* Texte en gras */
+            color: white;
+            margin-top: 20px;
+            font-weight: bold;
         }
 
         #particles-js {
-            position: absolute;
+            position: fixed;
             width: 100%;
             height: 100%;
             top: 0;
             left: 0;
-            z-index: -1;
+            z-index: 1;
         }
     </style>
 </head>
 
 <body>
+    <div id="particles-js"></div>
     <div id="wrapper">
         <!-- Barre de menu -->
         <nav class="navbar navbar-expand-lg navbar-light bg-warning">
@@ -104,7 +105,6 @@
 
         <div id="content">
             <!-- Ajout du conteneur pour Particle.js -->
-            <div id="particles-js"></div>
             <div id="header">
                 <p id="welcome-paragraph">Ce site est fièrement publié par Nextech en collaboration avec le Conseil de la Jeunesse de Tahoua pour promouvoir et soutenir la contribution active et dynamique de la jeunesse locale. Nous sommes déterminés à faciliter le partage d'informations, à inspirer l'engagement civique et à célébrer les initiatives visant à façonner un avenir meilleur pour la République du Niger. En unissant nos forces, nous aspirons à encourager la participation de tous, car chaque voix et action comptent dans la construction d'une communauté forte et prospère. Propulsé par la technologie et l'innovation, Nextech demeure votre partenaire engagé dans cette noble entreprise. J'y crois, je m'engage!</p>
             </div>
@@ -148,41 +148,41 @@
             particlesJS('particles-js',  {
                 particles: {
                     number: {
-                        value: 200,
+                        value: 100,
                         density: {
                             enable: true,
                             value_area: 800
                         }
                     },
                     color: {
-                        value: '#000000'
+                        value: ['#FFFFFF', '#000000'] // Couleurs blanche et noire
                     },
                     shape: {
-                        type: ["circle", "triangle", "image"],
+                        type: 'circle',
                         stroke: {
-                            width: 1,
-                            color: '#ffffff'
+                            width: 0,
+                            color: '#000000'
                         },
                         polygon: {
                             nb_sides: 5
                         }
                     },
                     opacity: {
-                        value: 0.6,
+                        value: 0.3,
                         random: true,
                         anim: {
                             enable: false,
                             speed: 1,
-                            opacity_min: 0.4,
+                            opacity_min: 0.1,
                             sync: false
                         }
                     },
                     size: {
-                        value: 20,
+                        value: 10,
                         random: true,
                         anim: {
                             enable: false,
-                            speed: 30,
+                            speed: 40,
                             size_min: 0.1,
                             sync: false
                         }
@@ -198,7 +198,7 @@
                         enable: true,
                         speed: 15,
                         direction: 'none',
-                        random: false,
+                        random: true, // Mouvement aléatoire
                         straight: false,
                         out_mode: 'out',
                         bounce: false,
@@ -249,12 +249,11 @@
                     }
                 },
                 retina_detect: true,
-
                 background: {
-        color: {
-            value: '#FFA500'
-        }
-    }
+                    color: {
+                        value: '#FFA500' // Couleur orange (#FFA500)
+                    }
+                }
             });
         });
     </script>
