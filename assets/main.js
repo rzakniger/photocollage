@@ -52,9 +52,9 @@ window.updatePreview = function(url) {
 
     var oImg = img.set({
       left: 30,
-      top: 50,
+      top: 30,
       cornerColor: 'red',
-      cornerSize: 25,
+      cornerSize: 20,
       transparentCorners: false,
       borderColor: 'red'
     }).scale(resizeRatio / 2);
