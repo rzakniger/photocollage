@@ -21,7 +21,6 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0);
   text-align: center;
   color: #000;
 }
@@ -29,7 +28,7 @@ html, body {
 #preview_panel {
   position: relative;
   display: inline-block;
-  background: rgba(255, 255, 255, 0);
+  
   border: 0;
   height: 100%;
   width: 99%;
