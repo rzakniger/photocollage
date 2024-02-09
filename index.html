@@ -278,6 +278,21 @@
             });
         });
     </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var typed = new Typed('.navbar-brand', {
+            strings: ["Bienvenue", "Nextech"],
+            typeSpeed: 50,
+            backSpeed: 50,
+            backDelay: 1000,
+            startDelay: 500,
+            loop: true,
+        });
+    });
+</script>
+
+    
     <script>
         function cb(response) {
             document.getElementById('generated-image-count').innerText = response.value;
